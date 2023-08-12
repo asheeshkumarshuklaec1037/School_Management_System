@@ -1,1 +1,1 @@
-# School_Management_System
+The School Management System is a web-based application built using Python and Django. It is designed to streamline administrative tasks, facilitate communication between staff, students, and parents, and manage student-related data efficiently.
