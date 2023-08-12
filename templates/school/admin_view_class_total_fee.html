@@ -1,0 +1,102 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+<head>
+  <title>Student Fees</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h6 class="panel-title">Fees</h6>
+      </div>
+      <table class="table table-hover table-striped table-bordered" id="dev-table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Fees collection</th>
+          </tr>
+        </thead>
+
+        <tr>
+          <td> One</td>
+          <td> {{studentfee1}}</td>
+        </tr>
+
+        <tr>
+          <td> Two</td>
+          <td> {{studentfee2}}</td>
+        </tr>
+
+        <tr>
+          <td> Three</td>
+          <td> {{studentfee3}}</td>
+        </tr>
+
+        <tr>
+          <td> Four</td>
+          <td> {{studentfee4}}</td>
+        </tr>
+
+        <tr>
+          <td> Five</td>
+          <td> {{studentfee5}}</td>
+        </tr>
+
+        <tr>
+          <td> Six</td>
+          <td> {{studentfee6}}</td>
+        </tr>
+
+        <tr>
+          <td> Seven</td>
+          <td> {{studentfee7}}</td>
+        </tr>
+
+        <tr>
+          <td> Eight</td>
+          <td> {{studentfee8}}</td>
+        </tr>
+
+        <tr>
+          <td> Nine</td>
+          <td> {{studentfee9}}</td>
+        </tr>
+
+        <tr>
+          <td> Ten</td>
+          <td> {{studentfee10}}</td>
+        </tr>
+        <thead>
+
+          <tr>
+            <th>Total fees</th>
+            <th>{{studentfee}}</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}

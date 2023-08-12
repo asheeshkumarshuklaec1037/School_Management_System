@@ -1,0 +1,107 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+<head>
+  <title>View Class</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+
+</head>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h6 class="panel-title">Students</h6>
+      </div>
+      <table class="table table-hover table-striped table-bordered" id="dev-table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>View Student</th>
+            <th> Number of students </th>
+          </tr>
+        </thead>
+        <tr>
+          <td> One</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'one'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student1}}</td>
+        </tr>
+
+        <tr>
+          <td> Two</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'two'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student2}}</td>
+        </tr>
+
+        <tr>
+          <td> Three</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'three'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student3}}</td>
+        </tr>
+
+        <tr>
+          <td> Four</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'four'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student4}}</td>
+        </tr>
+
+        <tr>
+          <td> Five</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'five'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student5}}</td>
+        </tr>
+
+        <tr>
+          <td> Six</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'six'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student6}}</td>
+        </tr>
+
+        <tr>
+          <td> Seven</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'seven'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student7}}</td>
+        </tr>
+
+        <tr>
+          <td> Eight</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'eight'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student8}}</td>
+        </tr>
+
+        <tr>
+          <td> Nine</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'nine'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student9}}</td>
+        </tr>
+
+        <tr>
+          <td> Ten</td>
+          <td><a class="btn btn-danger btn-xs" href="{% url 'admin-view-student' 'ten'  %}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+          <td> {{student10}}</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}

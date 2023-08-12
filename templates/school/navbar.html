@@ -1,0 +1,41 @@
+<!-- Bootstrap core CSS -->
+<link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="/static/project/css/fontawesome.css">
+<link rel="stylesheet" href="/static/project/css/templatemo-grad-school.css">
+<link rel="stylesheet" href="/static/project/css/owl.css">
+<link rel="stylesheet" href="/static/project/css/lightbox.css">
+
+<header class="main-header clearfix" role="header">
+  <div class="logo">
+    <a href="/"><em>MM</em>HS</a>
+  </div>
+  <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+  <nav id="menu" class="main-nav" role="navigation">
+    <ul class="main-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/adminclick">Admin</a></li>
+      <li><a href="/teacherclick">Teacher</a></li>
+      <li><a href="/studentclick">Student</a></li>
+      <li><a href="/about-developer">About developer</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.menu-link').click(function(e) {
+      e.preventDefault();
+      $('#menu').slideToggle();
+    });
+
+    $('#menu a').click(function(e) {
+      e.preventDefault();
+      var targetPage = $(this).attr('href');
+      window.location.href = targetPage;
+    });
+  });
+</script>
+

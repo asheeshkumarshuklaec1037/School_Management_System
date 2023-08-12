@@ -1,0 +1,81 @@
+{% extends 'school/adminbase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<head>
+  <title>Messages From Public</title>
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 100px;
+       background: -webkit-linear-gradient(left, #343a40, #607d8b);
+      color: #fff;
+      font-weight: bold;
+      line-height: 100px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 2px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+      height: 200px;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #4caf50;
+      color: #fff;
+    }
+  </style>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<!------ messages  ---------->
+<div class="container register-form">
+<div>
+    <div class="note">
+        <p>Messages From Public</p>
+    </div>
+  <table class="table table-hover table-striped table-bordered" id="dev-table">
+    <thead>
+
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>View Message</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    {% for message in messages %}
+      <tr>
+        <td>{{message.date}}</td>
+        <td>{{message.name}}</td>
+        <td><a href="{% url 'view-messages' message.id  %}"><button type="button" class="btn btn-success">Click Here</button></a></td>
+        <td><a href="{% url 'delete-message' message.id  %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+        <td></td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}

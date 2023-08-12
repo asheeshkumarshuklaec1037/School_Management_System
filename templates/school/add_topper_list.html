@@ -1,0 +1,118 @@
+{% extends 'school/adminbase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<head>
+  <title>Add Topper</title>
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+       background: -webkit-linear-gradient(left, #343a40, #607d8b);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #4caf50;
+      color: #fff;
+    }
+  </style>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<!------ add topper ---------->
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container register-form">
+    <div class="form">
+      <div class="note">
+        <p>Add Topper</p>
+      </div>
+      <div class="form-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field form.name class="form-control" placeholder="Enter the topper name" %}
+            </div>
+            <div class="form-group">
+              {% render_field form.class_name class="form-control" placeholder="Enter the class" %}
+            </div>
+            <div class="form-group">
+                {% render_field form.year class="form-control" placeholder="Enter the year" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.marks class="form-control" placeholder="Enter the marks" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.total_marks class="form-control" placeholder="Enter the total marks" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.percentage class="form-control" placeholder="Enter the percentage" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.photo class="form-control" placeholder="Upload image here" %}
+              </div>
+          </div> 
+        </div>
+        <button type="submit" class="btnSubmit">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="note">
+    <p>Topper List</p>
+  </div>
+<div class="container register-form">
+    <div>
+      <table class="table table-hover table-striped table-bordered" id="dev-table">
+        <thead>   
+          <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Year</th>
+            <th>Marks</th>
+            <th>Percentage</th>
+            <th>Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        {% for topper in toppers %}
+          <tr>
+            <td>{{topper.name}}</td>
+            <td>{{topper.class_name}}</td>
+            <td>{{topper.year}}</td>
+            <td>{{topper.marks}}</td>
+            <td>{{topper.percentage}}</td>
+            <td><img src="{{ topper.photo.url }}" alt="Topper Image" height="40"></td>
+            <td><a href="{% url 'update-topper' topper.id  %}"><button type="button" class="btn btn-success">Update</button></a>
+                <a href="{% url 'delete-topper' topper.id  %}"><button type="button" class="btn btn-danger">Delete</button></a>
+                </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    </div>
+{% endblock content %}

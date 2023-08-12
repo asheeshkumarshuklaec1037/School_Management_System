@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login</title>
+  <style type="text/css">
+    body {
+      color: #aa082e;
+      background-color: #b6bde7;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+        height: 80px;
+       background: -webkit-linear-gradient(left, #343a40, #607d8b);
+      color: #fff;
+      font-weight: bold;
+      line-height: 60px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+      height: 100px;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #4caf50;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  {% include "school/navbar.html" %}
+
+  <section class="section video" data-section="section5">
+  <form method="post">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <h4>Welcome To Manish Memorial High School</h4>
+        </div>
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form.username class="form-control" placeholder="Username" %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form.password class="form-control" placeholder="Password" %}
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit">Login</button>
+          <br>
+          <br>
+          <h6 style="color:aliceblue;">Admin Credential:</h6>
+          <h6 style="color:aliceblue;">Username: Admin</h6>
+          <h6 style="color:aliceblue;">Password: Admin@123</h6>
+        </div>
+        <div>
+          {% if messages %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Error:</strong> {% for message in messages %}
+          {{ message }}
+          {% endfor %}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+
+  {% include "school/footer.html" %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

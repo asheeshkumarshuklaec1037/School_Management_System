@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <title>Manish Memorial High School</title>
+
+  </head>
+
+<body>
+  <!--header-->
+  {% include "school/navbar.html" %}
+  
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="/static/project/homeimages/mmhs.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="caption">
+              <h4 class="display-4" style="color: yellow;"><b>Manish Memorial High School</b></h4>
+              <br><br>
+              {% for message in messages %}
+              <h6 class="display-4" style="color: white;">{{message.message}}</h6>
+              {% endfor %}
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+  {% if toppers %}
+  <section class="section contact" data-section="section6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Our Toppers</h2>
+          </div>
+        </div>
+        {% for topper in toppers %}
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="{{ topper.photo.url }}" class="card-img-top" alt="Student Photo">
+          <div class="card-body">
+            <h5 class="card-title">{{ topper.name }}</h5>
+            <p class="card-text">Class: {{ topper.class_name }}</p>
+            <p class="card-text">Marks: {{ topper.marks }}/{{ topper.total_marks }}</p>
+            <p class="card-text">Percentage: {{ topper.percentage }}%</p>
+            <p class="card-text">Year: {{ topper.year }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  
+  <section class="section why-us" data-section="section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Why choose MMHS?</h2>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div id='tabs'>
+            <ul>
+              <li><a href='#tabs-1'>Best Education</a></li>
+              <li><a href='#tabs-2'>Top Management</a></li>
+              <li><a href='#tabs-3'>Quality Meeting</a></li>
+            </ul>
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="/static/project/homeimages/best_education.jpg" alt="" style="max-width: 100%; max-height: 80%; margin-top: 60px;">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>Best Education</h4>
+                    <p>Manish Memorial High School is renowned for providing the best education to its students. The school employs highly qualified and experienced teachers who are dedicated to nurturing young minds. With a well-rounded curriculum, innovative teaching methods, and a focus on holistic development, the school ensures that students receive a comprehensive and excellent education.</p>
+                  </div>
+                </div>
+              </article>
+              <article id='tabs-2'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="/static/project/homeimages/staff.jpg" alt="" style="max-width: 100%; max-height: 80%; margin-top: 60px;">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>Top Management</h4>
+                    <p>The school is backed by a top-notch management team that brings a wealth of expertise and experience to the table. The management is committed to creating a conducive learning environment and constantly improving the school's infrastructure and facilities. Their visionary leadership ensures that the school stays at the forefront of educational advancements and provides students with a nurturing and stimulating environment.</p> 
+                  </div>
+                </div>
+              </article>
+              <article id='tabs-3'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="/static/project/homeimages/quality_meeting.jpg" alt="" style="margin-top: 60px;">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>Quality Meeting</h4>
+                    <p>At Manish Memorial High School, quality is a top priority. Regular meetings and discussions are held among the faculty, staff, and management to ensure that the highest standards of education and overall development are maintained. These quality meetings help in evaluating the effectiveness of teaching methodologies, identifying areas for improvement, and implementing necessary changes. The focus on quality ensures that students receive the best possible education and preparation for their future endeavors.</p>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section video" data-section="section5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <div class="left-content">
+            <span>Our presentation is for you</span>
+            <h4>Facilities provided <em>in our school</em></h4>
+            <h6><b style="color: green;">1. Modern Classrooms:</b> Spaces for teaching and learning activities.</h6>
+            <h6><b style="color: green;">2. Laboratories:</b> Equipped spaces for conducting experiments and practical learning in subjects such as science, computer science, and language studies.</h6>
+            <h6><b style="color: green;">3. Playground:</b>  An outdoor area with equipment for recreational activities and physical exercise.</h6>
+            <h6><b style="color: green;">4. Computer Lab:</b>  A dedicated space with computers for teaching computer skills and conducting digital activities.</h6>
+            <h6><b style="color: green;">5. Special Education Facilities:</b>  Rooms or dedicated spaces equipped to support students with special educational needs.</h6>
+            <h6><b style="color: green;">6. Transportation:</b>  Facilities for student transportation, such as parking areas and bus stops.</h6>
+            <h6><b style="color: green;">7. Generator:</b> To produce electricity in case of power failure.</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-us" data-section="section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Top Personalities</h2>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div id='tabs'>
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="/static/project/homeimages/Founder.jpg" alt="" style="max-width: 100%; max-height: 80%; margin-top: 60px;">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>Founder: Acharya Shri Laxman Das Ji Maharaj</h4>
+                    <p>Acharya Shri Laxman Das Ji Maharaj, the esteemed founder of MMHS, is a visionary leader who embarked on a remarkable journey to establish an institution of learning that has left an indelible mark on countless lives. With an unwavering commitment to education and a deep understanding of its transformative power, Maharaj Ji's vision has shaped the foundation of our school.
+                    <p>Driven by a passion for providing quality education and empowering future generations, Maharaj Ji tirelessly worked to create an environment where students can thrive academically, intellectually, and personally. With a focus on holistic development, Maharaj Ji envisioned a school that not only imparts knowledge but also nurtures character, instills values, and fosters a love for lifelong learning.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article id='tabs-2'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="/static/project/homeimages/principal.jpg" alt="" style="max-width: 100%; max-height: 80%; margin-top: 60px;">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>Principal: Pawan Kumar Shukla</h4>
+                    <p>Pawan Kumar Shukla, the principal of MMHS, is a dynamic educational leader who plays a pivotal role in shaping the educational journey of our students. With a wealth of experience and a deep passion for education, Pawan Kumar Shukla brings a unique blend of expertise, dedication, and compassion to his role as the principal of our school.</p> 
+                    <p>A strong advocate for collaboration and innovation, Pawan Kumar Shukla encourages teachers and staff to adopt progressive teaching methodologies and stay abreast of the latest educational trends. He promotes professional development opportunities and provides the necessary resources to ensure that educators can create engaging and meaningful learning experiences for students.</p>
+                    <h6><b style="color: yellow;">Teaching Experience: 15 years</b></h6>
+                    <h6><b style="color: yellow;">Qualification: BA, MA, BEd, MEd, LLB</b></h6>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" data-section="section6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Let’s Keep In Touch</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form id="contact-form" action="/contactus" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6">
+                <fieldset>
+                  <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="">
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset>
+                  <input name="email" type="text" class="form-control" id="email" placeholder="Your Email" required="">
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset>
+                  <input name="contact" type="text" class="form-control" id="contact" placeholder="Your Contact" required="">
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset>
+                  <input name="address" type="text" class="form-control" id="address" placeholder="Your Address" required="">
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="button">Send Message Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="row" style="color: white;">
+            <div class="col-md-6">
+              <h4>Address:</h4>
+              <h6><b>Area:</b>  {{address.area}}</h6>
+              <h6><b>District:</b>   {{address.district}}</h6>
+              <h6><b>State:</b>   {{address.state}}</h6>
+              <h6><b>Pin:</b>   {{address.pin}}</h6>
+              <h6><b>Mobile:</b>   {{address.mobile}}</h6>
+              <h6><b>Email:</b>   {{address.email}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="static/project/js/isotope.min.js"></script>
+    <script src="static/project/js/owl-carousel.js"></script>
+    <script src="static/project/js/lightbox.js"></script>
+    <script src="static/project/js/tabs.js"></script>
+    <script src="static/project/js/video.js"></script>
+    <script src="static/project/js/slick-slider.js"></script>
+    <script src="static/project/js/custom.js"></script>
+    <script>
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+          if($(e.target).hasClass('external')) {
+            return;
+          }
+          e.preventDefault();
+          $('#menu').removeClass('active');
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+
+        document.getElementById('contact-form').onsubmit = function (event) {
+          event.preventDefault(); // Prevent default form submission
+      
+          // Get the form data and submit it using AJAX or fetch API
+          fetch('/contactus', {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': '{{ csrf_token }}', // Add CSRF token header
+            },
+            body: new FormData(document.getElementById('contact-form')),
+          })
+            .then(function (response) {
+              if (response.ok) {
+                // Display the success message
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Success!',
+                  text: 'Thank you for your message. We have received it.',
+                });
+              } else {
+                // Handle errors if needed
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong. Please try again later.',
+                });
+              }
+            })
+            .catch(function (error) {
+              // Handle errors if needed
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong. Please try again later.',
+              });
+            });
+        };
+    </script>
+</body>
+</html>
